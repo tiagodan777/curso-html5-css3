@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Tudo sobre o Google Glass</title>
+    <link rel="stylesheet" href="_css/estilo.css"/>
+    <link rel="stylesheet" href="_css/form.css"/>
+    <script src="_javascript/funcoes.js"></script>
+    <script>
+        function calTotal() {
+            var qdt = parseInt(document.getElementById('cQtd').value);
+            tot = qdt * 1500;
+            document.getElementById('cTot').value = tot;
+
+        }
+    </script>
+</head>
+<body>
+<div id="interface">
+    <header id="cabecalho">
+        <hgroup>
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está chegando</h2>
+        </hgroup>
+
+        <img id="icone" src="_imagens/contato.png" alt=""/>
+
+        <nav id="menu">
+            <h1>Menu Principal</h1>
+            <ul>
+                <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+                <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+                <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+                <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimédia</a></li>
+                <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fala conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="corpo-full">
+        <article id="noticia-principal">
+            <header id="cabecalho-artigo">
+                <hgroup>
+                    <h3>Fala Conosco > Contato</h3>
+                    <h1>Formulário de Contato</h1>
+                    <h2>por Tiago Daniel</h2>
+                    <h3 class="direita">Atualizado em 01/Maio/2023</h3>
+                </hgroup>
+            </header>
+
+            <form method="post" id="fContato" action="mailto:tiagoamdaniel488@gmail.com" oninput="calTotal();">
+                <fieldset id="usuario">
+                    <legend>Identificação do Usuário</legend>
+                    <p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Ex: Tiago"/></p>
+                    <p><label for="cSenha">Password:</label> <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8"></p>
+                    <p><label for="cMail">E-mail:</label> <input type="email" name="tMail" id="cMail" size="20" maxlength="40"/></p>
+                    <fieldset id="sexo">
+                        <legend>Sexo:</legend>
+                            <input type="radio" name="tSexo" id="cMasc" checked/> <label for="cMasc">Masculino</label> <br/>
+                            <input type="radio" name="tSexo" id="cFem"/> <label for="cFem">Feminino</label>
+                        
+                    </fieldset>
+                    <p>Data de Nascimento <input type="date" name="tNasc" id="cNasc"/>:</p>
+                </fieldset>
+
+                <fieldset id="endereco">
+                    <legend>Endereço do Usuário</legend>
+                    <p><label for="cRua">Endereço:</label> <input type="text" name="tRua" id="cRua" size="20" maxlength="80" placeholder="Estrada Regional 5, Tavira"/></p>
+                    <p><label for="cNum">Número:</label> <input type="number" name="tNum" id="cNum" min="0" max="99999" placeholder="57"/></p>
+                    <p><label for="cDis">Distrito:</label>
+                        <select name="tDis" id="cDis">
+                            <optgroup label="Região Norte">
+                                <option value="VC">Viana do Castelo</option>
+                                <option value="BG">Braga</option>
+                                <option value="VR">Vila Real</option>
+                                <option value="BRA">Bragança</option>
+                                <option value="POR">Porto</option>
+                                <option value="AV">Aveiro</option>
+                                <option value="VIS">Viseu</option>
+                                <option value="GUA">Guarda</option>
+                            </optgroup>
+
+                            <optgroup label="Região Centro">
+                                <option value="COM">Coimbra</option>
+                                <option value="CB">Castelo Branco</option>
+                                <option value="LEI">Leiria</option>
+                                <option value="SAN">Santarém</option>
+                                <option value="PORA">Portoalegra</option>
+                                <option value="LIS" selected>Lisboa</option>
+                                <option value="EV">Évora</option>
+                            </optgroup>
+
+                            <optgroup label="Região Sul">
+                                <option value="ST">Setúbal</option>
+                                <option value="BJ">Beja</option>
+                                <option value="FAR">Faro</option>
+                            </optgroup>
+
+                            <optgroup label="Regiões Autónumas">
+                                <option value="RAA">Região Autónoma dos Açores</option>
+                                <option value="RAM">Região Autónoma da Madeira</option>
+                            </optgroup>
+                        </select>
+                    </p>
+                    <p><label for="cCid">Cidade:</label> <input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Ex: Lisboa, Lagoa, etc" list="cidades"/></p>
+                    <datalist id="cidades">
+                        <option value="Lagoa"></option>
+                        <option value="Lisboa"></option>
+                        <option value="Almada"></option>
+                        <option value="Porto"></option>
+                        <option value="Coimbra"></option>
+                        <option value="Ponta Delgada"></option>
+                        <option value="Angra do Heroísmo"></option>
+                        <option value="Matosinhos"></option>
+                        <option value="Amadora"></option>
+                    </datalist>
+                </fieldset>
+
+                <fieldset id="mensagem">
+                    <legend>Mensagem do Usuário</legend>
+                    <p><label for="cUrg">Grau de Urgência:</label> Min<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2"/>Máx</p>
+                    <p><label for="cMsg">Mensagem:</label>
+                        <textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixa aqui a tua Mensagem"></textarea>
+                    </p>
+                </fieldset>
+
+                <fieldset id="pedido">
+                    <legend>Quero um Google Glass</legend>
+                    <p><input type="checkbox" name="tPed" id="cPed" checked/><label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
+                    <p><label for="cCor">Cor:</label> <input type="color" name="tCor" id="cCor" value="#0000FF"></p>
+                    <p><label for="cQtd">Quantidade:</label> <input type="number" name="tQtd" id="cQtd" min="0" max="5" value="0"/></p>
+                    <p><label for="cTot">Preço Total: €</label> <input type="text" name="tTot" id="cTot" placeholder="Total a Pagar" readonly/></p>
+                </fieldset>
+
+                <input type="image" name="tEnviar" src="_imagens/botao-enviar.png"/>
+            </form>
+        </article>
+    </section>
+    <footer id="rodape">
+        <p>Copyright &copy; 2023 - by Tiago Daniel <br/>
+            <a href="https://www.youtube.com/channel/UCCHnakFxtl4iRYP4F5Fs0xA" target="_blank">YouTube</a>
+            | <a href="https://www.instagram.com/tiagodan777/" target="_blank">Instagram</a></p>
+    </footer>
+</div>
+</body>
+</html>
